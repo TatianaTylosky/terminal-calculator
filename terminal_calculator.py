@@ -18,7 +18,10 @@ parser.add_argument("-s", "--squareroot", help="finds the square root of the num
 parser.add_argument("-a", "--add", help="adds numbers together",
                     type=int, nargs = '*')
 
-#lets check for the arg now
+parser.add_argument("-m", "--multiply", help="multiplies numbers together",
+                    type=int, nargs = '*')
+
+#lets check for the args now
 args = parser.parse_args()
 
 if args.foo:
@@ -39,6 +42,13 @@ if args.add:
         total = total + args.add[x]
     print total
 
+if args.multiply:
+    print "Multiplying numbers..."
+    total = 1
+    y = len(args.multiply)
+    for x in range (0, y):
+        total = total * args.multiply[x]
+    print total
 
 #print dir(args)
 
